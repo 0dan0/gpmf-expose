@@ -4,7 +4,7 @@ This is a utility for GoPro Fusion cameras. Based on https://github.com/gopro/gp
 
 GPMF-expose can help solve some introduced stitching issues when using extreme exposure differences between the front and back lens. This can occur when you shoot Fusion within a window or doorway, with one lens exposed to the outside, the other to the inside.  Fusion stores the per frame lens exposure information within the GPMF metadata track. This tool DESTRUCTIVLY changes that metadata to a user settable maximum difference. Doing this reduces the stitching software's ability to compensate for the exposure difference, but for the window/doorway scenario compensation can be unwanted.  
 
-WARNING:  Backup all files before using this tool as it will modify your source.
+### WARNING:  Backup all files before using this tool as it will modify your source.
 
 ## Examples
 
