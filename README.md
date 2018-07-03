@@ -8,13 +8,17 @@ WARNING:  Backup all files before using this tool as it will modify your source.
 
 example:
 > gpmf-expose GPFR5391.MP4 GPBK5391.MP4 
-
+```
 maximum exposure difference: 4.9 stops
+```
 
 > gpmf-expose GPFR5391.MP4 GPBK5391.MP4 -s1.5
-
+```
 maximum exposure difference: 4.9 stops
 exposure difference limited to 1.5 stops
+```
+
+![](readmegfx/exampleGPMF-Expose.jpg "Example")
 
 Now stitch the files using GoPro Fusion Studio.
 
