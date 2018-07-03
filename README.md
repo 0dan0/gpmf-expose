@@ -6,7 +6,8 @@ GPMF-expose can help solve some introduced stitching issues when using extreme e
 
 WARNING:  Backup all files before using this tool as it will modify your source.
 
-examples:
+## Examples
+
 Request exposure difference:
 ```
 > gpmf-expose GPFR5391.MP4 GPBK5391.MP4 
