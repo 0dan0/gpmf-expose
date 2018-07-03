@@ -60,13 +60,13 @@ int main(int argc, char *argv[])
 	// get file return data
 	if (argc < 3)
 	{
-		printf("usage: %s fusion_front.mp4 fusion_back.mp4 -<switches> \n", argv[0]);
-		printf("          -s<max>  Maximum exposure difference in stops e.g. -s0 or -s2\n", argv[0]);
+		printf("usage: gpmf-expose fusion_front.mp4 fusion_back.mp4 -<switches> \n");
+		printf("          -s<max>  Maximum exposure difference in stops e.g. -s0 or -s1.5\n");
 		return -1;
 	}
 
 	if (argc >= 4 && argv[3][0] == '-' && argv[3][1] == 's')
-		limitexposurediff = atof(&argv[3][2]);
+		limitexposurediff = (float)atof(&argv[3][2]);
 
 	size_t mp4a = OpenMP4Source(argv[1], MOV_GPMF_TRAK_TYPE, MOV_GPMF_TRAK_SUBTYPE);
 	size_t mp4b = OpenMP4Source(argv[2], MOV_GPMF_TRAK_TYPE, MOV_GPMF_TRAK_SUBTYPE);
@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
 
 				if (samples)
 				{
-					for (int i = 0; i < samples; i++)
+					for (uint32_t i = 0; i < samples; i++)
 					{
 						float expA = getExposure(data_shutA, data_isogA);
 						float expB = getExposure(data_shutB, data_isogB);
@@ -169,7 +169,7 @@ int main(int argc, char *argv[])
 					uint32_t samples = shut_samples;
 					float expA, expB;
 
-					for (int i = 0; i < samples; i++)
+					for (uint32_t i = 0; i < samples; i++)
 					{
 						if (i < shut_samples && i < isog_samples)
 							expA = getExposure(data_shutA, data_isogA);
